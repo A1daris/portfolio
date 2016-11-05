@@ -16,7 +16,8 @@ a
 	color: $color
 
 p,
-body .main_footer
+body .main_footer,
+.s_about li
 	color: $text_color
 .main_footer
 	+kerning(0)
@@ -58,9 +59,24 @@ svg
 	+kerning(5)		
 	&::after
 		background-color: #111
-
-
-
-
+section
+	h3
+		+kerning(2)
+		color: $text_color
+.s_about
+	p:nth-child(even)
+		color: $color
+.resume_container
+	h3
+		color: $main_color
+		+kerning(1.5)
+		font-size: 15px
+		font-weight: 400px
+.resume_item
+	.year
+		background-color: $color
+		color: #fff
+	h3
+		+kerning(1)
 
 	

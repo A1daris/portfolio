@@ -6,7 +6,8 @@ a {
   color: #FF6347; }
 
 p,
-body .main_footer {
+body .main_footer,
+.s_about li {
   color: #888; }
 
 .main_footer {
@@ -55,5 +56,24 @@ svg {
   letter-spacing: 5px; }
   .s_descr::after {
     background-color: #111; }
+
+section h3 {
+  letter-spacing: 2px;
+  color: #888; }
+
+.s_about p:nth-child(even) {
+  color: #FF6347; }
+
+.resume_container h3 {
+  color: #333;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  font-weight: 400px; }
+
+.resume_item .year {
+  background-color: #FF6347;
+  color: #fff; }
+.resume_item h3 {
+  letter-spacing: 1px; }
 
 /*# sourceMappingURL=tomato.css.map */
