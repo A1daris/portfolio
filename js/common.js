@@ -11,8 +11,8 @@ $(document).ready(function() {
 	$(".animation_2").animated("fadeInLeft", "fadeOutLeft");
 	$(".animation_3").animated("fadeInLeft", "fadeOutLeft");
 	//section work animation
-	$(".left .resume_item").animated("fadeInLeft", "fadeOutLeft");
-	$(".right .resume_item").animated("fadeInRight", "fadeOutRight");
+	$(".left .resume_item").animated("fadeInUp", "fadeOutUp");
+	$(".right .resume_item").animated("fadeInDown", "fadeOutDown");
 	
 
 	//Screen height detection
