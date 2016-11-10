@@ -326,4 +326,117 @@ svg path {
   .resume_icon:last-child {
     margin-bottom: 0; }
 
+.s_portfolio ul,
+.s_portfolio li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+.s_portfolio li {
+  display: inline-block;
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer; }
+.s_portfolio ul {
+  margin-bottom: 40px; }
+
+#portfolio_grid .mix {
+  display: none; }
+
+.filter_div {
+  text-align: center; }
+
+.portfolio_item {
+  padding: 0; }
+  .portfolio_item img {
+    width: 100%; }
+
+.port_item_cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding-top: 15%;
+  opacity: 0;
+  transition: all 0.5s; }
+  .port_item_cont:hover {
+    opacity: 1;
+    padding-top: 10%; }
+  .port_item_cont h3 {
+    background-color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0; }
+  .port_item_cont a {
+    border: #fff 1px solid;
+    background-color: transparent;
+    padding: 2px 10px;
+    display: inline-block; }
+
+.port_descr {
+  background-color: #fff;
+  max-width: 500px;
+  margin: auto; }
+  .port_descr h3,
+  .port_descr p {
+    padding: 20px;
+    padding-bottom: 0px; }
+  .port_descr h3 {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    padding-top: 25px;
+    font-weight: 400; }
+  .port_descr p {
+    margin-top: 0; }
+  .port_descr img {
+    width: 100%;
+    margin-top: 10px; }
+
+.mfp-close-btn-in .mfp-close {
+  color: #fff; }
+
+.main_footer .social_wrap {
+  float: right;
+  margin: 0;
+  line-height: 0; }
+  .main_footer .social_wrap ul {
+    margin: 0;
+    margin-top: 5px; }
+
+.contact_box {
+  margin-bottom: 30px; }
+  .contact_box h3 {
+    text-align: left;
+    color: #000;
+    margin-bottom: 10px; }
+  .contact_box .contacts_icon {
+    font-size: 35px; }
+  .contact_box p {
+    margin-top: 5px; }
+
+.main_form button {
+  border: none;
+  color: #fff;
+  line-height: 40px;
+  padding: 0 25px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+.form_group {
+  display: block; }
+  .form_group input,
+  .form_group textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    line-height: 35px;
+    text-indent: 12px; }
+
 /*# sourceMappingURL=main.css.map */

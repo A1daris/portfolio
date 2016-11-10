@@ -33,6 +33,18 @@
 	.top_wrapper .top_text p {
 		font-size: 1em;
 	}
+	.main_footer {
+		text-align: left;
+	}
+	.main_footer .social_wrap {
+		float: left;
+		margin-top: 10px;
+		width: 100%;
+	}
+
+	.main_footer .social_wrap ul {
+		padding-left: 0;
+	}
 }
 
 /* Custom, iPhone Retina */

@@ -76,4 +76,32 @@ section h3 {
 .resume_item h3 {
   letter-spacing: 1px; }
 
+.s_portfolio li {
+  color: #888;
+  letter-spacing: 2px; }
+.s_portfolio li.active {
+  color: #fff;
+  border-bottom: 1px solid #FF6347; }
+
+.port_item_cont a {
+  border-color: #FF6347;
+  color: #FF6347; }
+
+.main_footer .social_wrap {
+  color: #FF6347; }
+
+.contacts_icon {
+  color: #FF6347; }
+
+form input:focus,
+form textarea:focus {
+  border: 1px solid #FF6347; }
+form button {
+  background-color: #FF6347;
+  letter-spacing: 3px; }
+
+.form-group {
+  letter-spacing: 2px;
+  color: #888; }
+
 /*# sourceMappingURL=tomato.css.map */
