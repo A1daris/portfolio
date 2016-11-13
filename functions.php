@@ -22,5 +22,9 @@ function logo_widget_init() {
     ) );
 }
 add_action( 'widgets_init', 'logo_widget_init' );
+
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
+add_theme_support('post-thumbnails');
+
 ?>

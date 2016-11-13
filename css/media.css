@@ -14,12 +14,7 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-	.resume_container .left,
-	.resume_container .left h3 
-	.section_content .resume_container .resume_icon {
-		text-align: left;
-		margin-bottom: 10px;
-	}
+
 
 }
 

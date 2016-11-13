@@ -10,34 +10,39 @@
 	<div class="section_content">
 		<div class="container">
 			<div class="row">
+				<?php if ( have_posts() ) : query_posts('p=7');
+					while (have_posts()) : the_post(); ?>
 				<div class="col-md-4 col-md-push-4 animation_1">
-					<h3>Фото</h3>
+					<h3>Photo</h3>
 					<div class="person">
-						<a href="img/photo.jpg" class="popup"><img src="img/photo.jpg" alt="alt"></a>
+						<?php if ( has_post_thumbnail() ): ?>
+						<a class="popup" href="<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(),'large' );
+						echo $large_image_url[0]; ?>"
+
+						   title="<?php the_title_attribute(); ?>">
+							<?php the_post_thumbnail(array(400, 200)); ?>
+						</a>
+						<?php endif; ?>
 					</div>
 				</div>
 				<div class="col-md-4 col-md-pull-4 animation_2">
-					<h3>
-Немного о себе
-</h3>
-					<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Обеспечивает своего он парадигматическая продолжил взобравшись маленький подпоясал то за снова предупреждал последний всеми, пояс власти текстами предупредила вдали всемогущая.</p>
-					<p>Обеспечивает своего он парадигматическая продолжил взобравшись маленький подпоясал то за снова предупреждал последний всеми, пояс власти текстами предупредила вдали всемогущая.</p>
-				</div>
+					<h3><?php the_title(); ?></h3>
+					<?php the_content(); ?></div>
+				<? endwhile; endif; wp_reset_query(); ?>
 				<div class="col-md-4 animation_3 personal_last_block">
-					<h3>Personal info</h3>
-					<h2 class="personal_header">Boris Sizov</h2>
-					<ul>
-						<li>Proffesional site making: scetches, design development, word press</li>
-						<li>Birthday: 10 january 1986</li>
-						<li>Phone: +7 904 679-9493</li>
-						<li>E-mail: <a href="mailto: boris.sizov@gmail.com">boris.sizof@gmail.com</a></li>
-					</ul>
+					<?php if ( have_posts() ) : query_posts('p=9');
+						while (have_posts()) : the_post(); ?>
+
+					<h3><?php the_title(); ?></h3>
+					<h2 class="personal_header"><?php echo get_bloginfo('name'); ?></h2>
+							<?php the_content(); ?>
+					<? endwhile; endif; wp_reset_query(); ?>
 					<div class="social_wrap">
 						<ul>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-vk"></i></a></li>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-github"></i></a></li>
+							<?php if ( have_posts() ) : query_posts('cat=3');
+								while (have_posts()) : the_post(); ?>
+									<li><a href="<?php echo get_post_meta($post->ID, 'soc_url', true); ?>" target="_blank" title="<?php the_title(); ?>"><i class="fa <?php echo get_post_meta($post->ID,'fonts_awesome', true); ?>"></i></a></li>
+							<? endwhile; endif; wp_reset_query(); ?>
 						</ul>
 					</div>
 				</div>
@@ -48,60 +53,46 @@
 </section>
 <section id="resume" class="s_resume" >
 	<div class="section_header">
-		<h2>Resume</h2>
+		<h2><?php echo get_cat_name(4) ?></h2>
 		<div class="s_descr_wrap">
-			<div class="s_descr">My skills and achivements</div>
+			<div class="s_descr"><?php echo category_description(4) ?></div>
 		</div>
 	</div>
 	<div class="section_content">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 resume_container left">
-					<h3>Work</h3>
-					<div class="resume_icon">
-						<i class="icon-basic-book-pen"></i>
-					</div>
-					<div class="resume_item">
-						<div class="year">2010-2011</div>
-						<div class="resume_description">OOO Trollolo <strong>Programmer</strong>
-							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупреждал заманивший заглавных, языком щеке силуэт точках запятых толку семь своего живет, сих буквенных. Это послушавшись по всей свое вскоре океана?</p>
+				<div class="resume_container">
+					<div class="col-md-6 col-sm-6 left">
+						<h3><?php echo get_cat_name(5); ?></h3>
+						<div class="resume_icon">
+							<i class="icon-basic-book-pen"></i>
 						</div>
-					</div>
-					<div class="resume_item">
-						<div class="year">2010-2011</div>
-						<div class="resume_description">OOO Trollolo <strong>Programmer</strong>
-							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупреждал заманивший заглавных, языком щеке силуэт точках запятых толку семь своего живет, сих буквенных. Это послушавшись по всей свое вскоре океана?</p>
+						<?php if ( have_posts() ) : query_posts('cat=5');
+						while (have_posts()) : the_post(); ?>
+						<div class="resume_item">
+							<div class="year"><?php echo get_post_meta($post->ID, 'resume_years', true); ?></div>
+							<div class="resume_description"><?php echo get_post_meta($post->ID, 'resume_place', true); ?> <strong><?php the_title(); ?></strong>
+								<?php the_content(); ?>
+							</div>
 						</div>
+						<? endwhile; endif; wp_reset_query(); ?>
 					</div>
-					<div class="resume_item">
-						<div class="year">2010-2011</div>
-						<div class="resume_description">OOO Trollolo <strong>Programmer</strong>
-							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупреждал заманивший заглавных, языком щеке силуэт точках запятых толку семь своего живет, сих буквенных. Это послушавшись по всей свое вскоре океана?</p>
+					<div class="col-md-6 col-sm-6 right">
+						<h3><?php echo get_cat_name(6); ?></h3>
+						<div class="resume_icon">
+							<i class="icon-basic-case"></i>
 						</div>
-					</div>
-				</div>
-				<div class="col-md-6 resume_container right">
-					<h3>Study</h3>
-					<div class="resume_icon">
-						<i class="icon-basic-case"></i>
-					</div>
-					<div class="resume_item">
-						<div class="year">2010-2011</div>
-						<div class="resume_description">OOO Trollolo <strong>Programmer</strong>
-							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупреждал заманивший заглавных, языком щеке силуэт точках запятых толку семь своего живет, сих буквенных. Это послушавшись по всей свое вскоре океана?</p>
-						</div>
-					</div>
-					<div class="resume_item">
-						<div class="year">2010-2011</div>
-						<div class="resume_description">OOO Trollolo <strong>Programmer</strong>
-							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупреждал заманивший заглавных, языком щеке силуэт точках запятых толку семь своего живет, сих буквенных. Это послушавшись по всей свое вскоре океана?</p>
-						</div>
-					</div>
-					<div class="resume_item">
-						<div class="year">2010-2011</div>
-						<div class="resume_description">OOO Trollolo <strong>Programmer</strong>
-							<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Предупреждал заманивший заглавных, языком щеке силуэт точках запятых толку семь своего живет, сих буквенных. Это послушавшись по всей свое вскоре океана?</p>
-						</div>
+
+							<?php if ( have_posts() ) : query_posts('cat=6');
+							while (have_posts()) : the_post(); ?>
+								<div class="resume_item">
+									<div class="year"><?php echo get_post_meta($post->ID, 'resume_years', true); ?></div>
+									<div class="resume_description"><strong><?php the_title(); ?></strong><?php echo get_post_meta($post->ID, 'resume_place', true); ?>
+										<?php the_content(); ?>
+									</div>
+								</div>
+							<? endwhile; endif; wp_reset_query(); ?>
+
 					</div>
 				</div>
 			</div>

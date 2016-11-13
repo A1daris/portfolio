@@ -277,36 +277,41 @@ svg
 		display: inline-block
 		padding-right: 20px
 .resume_container
+	.left .resume_description strong
+		margin-left: 10px
+	.right .resume_description strong
+		margin-right: 10px
 	.left
 		text-align: right
-		padding-right: 15px
-		border-right: 1px solid #d2d2d2
+		border-right: black 1px solid
 		h3
 			text-align: right
-.resume_container
 	.right
 		text-align: left
-		padding-left: 15px
 		h3
 			text-align: left
+	h3
+		margin-top: 30px
 	.year
 		font-weight: 600
 		font-style: italic
 		display: inline-block
 		padding: 0 15px
-		margin-bottom: 20px
+		margin-bottom: 15px
+	strong
+		font-weight: 600
+		font-style: normal
+		text-transform: uppercase
 	.resume_description
 		font-style: italic
-		strong
-			font-weight: 600
-			font-style: normal
-			text-transform: uppercase
 	.resume_item
-		margin-bottom: 25px
+		margin-bottom: 40px
 		p
 			margin-top: 10px
 		&:last-child
 			margin-bottom: 0
+			p
+				margin-bottom: 0
 .resume_icon
 	font-size: 40px
 	margin-bottom: 30px
