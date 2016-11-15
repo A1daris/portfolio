@@ -1,7 +1,7 @@
 <footer class="main_footer bg_dark">
     <div class="container">
         <div class="col-md-12">
-            &copy; 2016 Boris Sizov
+            &copy; <?php echo date("Y"); ?> <?php echo get_bloginfo('name'); ?>
             <div class="social_wrap">
                 <ul>
                     <?php if ( have_posts() ) : query_posts('cat=3');

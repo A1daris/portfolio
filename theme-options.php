@@ -94,10 +94,23 @@ function theme_options_do_page() {
 				 * A sample text input option
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Some text', 'sampletheme' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Phone', 'sampletheme' ); ?></th>
 					<td>
-						<input id="sample_theme_options[sometext]" class="regular-text" type="text" name="sample_theme_options[sometext]" value="<?php esc_attr_e( $options['sometext'] ); ?>" />
-						<label class="description" for="sample_theme_options[sometext]"><?php _e( 'Sample text input', 'sampletheme' ); ?></label>
+						<input id="sample_theme_options[Phone]" class="regular-text" type="text" name="sample_theme_options[Phone]" value="<?php esc_attr_e( $options['Phone'] ); ?>" />
+						<label class="description" for="sample_theme_options[Phone]"><?php _e( 'insert your phone', 'sampletheme' ); ?></label>
+					</td>
+				</tr>
+
+				<tr valign="top"><th scope="row"><?php _e( 'adress', 'sampletheme' ); ?></th>
+					<td>
+						<input id="sample_theme_options[adress]" class="regular-text" type="text" name="sample_theme_options[adress]" value="<?php esc_attr_e( $options['adress'] ); ?>" />
+						<label class="description" for="sample_theme_options[adress]"><?php _e( 'insert your adress', 'sampletheme' ); ?></label>
+					</td>
+				</tr>
+				<tr valign="top"><th scope="row"><?php _e( 'website', 'sampletheme' ); ?></th>
+					<td>
+						<input id="sample_theme_options[website]" class="regular-text" type="text" name="sample_theme_options[website]" value="<?php esc_attr_e( $options['website'] ); ?>" />
+						<label class="description" for="sample_theme_options[website]"><?php _e( 'insert your website', 'sampletheme' ); ?></label>
 					</td>
 				</tr>
 

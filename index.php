@@ -53,9 +53,9 @@
 </section>
 <section id="resume" class="s_resume" >
 	<div class="section_header">
-		<h2><?php echo get_cat_name(4) ?></h2>
+		<h2><?php echo get_cat_name(4); ?></h2>
 		<div class="s_descr_wrap">
-			<div class="s_descr"><?php echo category_description(4) ?></div>
+			<div class="s_descr"><?php echo category_description(4); ?></div>
 		</div>
 	</div>
 	<div class="section_content">
@@ -101,9 +101,9 @@
 </section>
 <section id="portfolio" class="s_portfolio bg_dark" >
 	<div class="section_header">
-		<h2>My works</h2>
+		<h2><?php echo get_cat_name(7); ?></h2>
 		<div class="s_descr_wrap">
-			<div class="s_descr">Web sites, I made recently </div>
+			<div class="s_descr"><?php echo category_description(7); ?></div>
 		</div>
 	</div>
 	<div class="section_content">
@@ -112,117 +112,40 @@
 				<div class="filter_div controls">
 					<ul>
 						<li class="filter active" data-filter="all">All project</li>
-						<li class="filter" data-filter=".category-1">Web sites</li>
-						<li class="filter" data-filter=".category-2">Logos</li>
-						<li class="filter" data-filter=".category-3">UI</li>
+						<li class="filter" data-filter=".sites">Web sites</li>
+						<li class="filter" data-filter=".logos">Logos</li>
+						<li class="filter" data-filter=".iface">UI</li>
 					</ul>
 				</div>
 				<div id="portfolio_grid">
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-1">
-						<img src="img/portfolio-images/1.jpg" alt="">
+
+					<?php if ( have_posts() ) : query_posts('cat=7');
+						while (have_posts()) : the_post(); ?>
+
+					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item <?php
+					$tags = wp_get_post_tags($post->ID);
+					if ($tags) {
+						foreach($tags as $tag) {
+							echo ' ' . $tag->name;
+						}
+					};
+					?>">
+						<?php the_post_thumbnail(array(370, 250)); ?>
 						<div class="port_item_cont">
-							<h3>Car interior</h3>
-							<p>Made in futurustic style, that design could lead us to the nice expirience of super fast driving</p>
+							<h3><?php the_title(); ?></h3>
+							<?php the_excerpt(); ?>
 							<a class="popup_content">Fast view</a>
 							<div class="hidden">
 								<div class="port_descr">
-									<h3>Car interior</h3>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Первую продолжил единственное текстов, до ведущими его большой взобравшись, родного большого домах путь семь скатился рукопись путь решила журчит за.</p>
-									<img src="img/portfolio-images/1.jpg" alt="Alt">
+									<h3><?php the_title(); ?></h3>
+									<?php the_content(); ?>
+									<?php the_post_thumbnail(array(800, 600)); ?>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-1"><img src="img/portfolio-images/2.jpg" alt="">
-						<div class="port_item_cont">
-							<h3>Robot drawing</h3>
-							<p>Made in futurustic style, that design could</p>
-							<a class="popup_content">Fast view</a>
-						</div>
-						<div class="hidden">
-								<div class="port_descr">
-									<h3>Car interior</h3>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Первую продолжил единственное текстов, до ведущими его большой взобравшись, родного большого домах путь семь скатился рукопись путь решила журчит за.</p>
-									<img src="img/portfolio-images/2.jpg" alt="Alt">
-								</div>
-							</div>
-					</div>
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-1"><img src="img/portfolio-images/3.jpg" alt="">
-						<div class="port_item_cont">
-							<h3>Robot drawing</h3>
-							<p>Made in futurustic style, that design could</p>
-							<a class="popup_content">Fast view</a>
-						</div>
-						<div class="hidden">
-								<div class="port_descr">
-									<h3>Car interior</h3>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Первую продолжил единственное текстов, до ведущими его большой взобравшись, родного большого домах путь семь скатился рукопись путь решила журчит за.</p>
-									<img src="img/portfolio-images/3.jpg" alt="Alt">
-								</div>
-							</div>
-					</div>
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-2"><img src="img/portfolio-images/4.jpg" alt="">
-						<div class="port_item_cont">
-							<h3>Robot drawing</h3>
-							<p>Made in futurustic style, that design could</p>
-							<a>Fast view</a>
-						</div>
-					</div>
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-2"><img src="img/portfolio-images/5.jpg" alt="">
-						<div class="port_item_cont">
-							<h3>Robot drawing</h3>
-							<p>Made in fauturustic style, that design could</p>
-							<a class="popup_content">Fast view</a>
-						</div>
-						<div class="hidden">
-								<div class="port_descr">
-									<h3>Car interior</h3>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Первую продолжил единственное текстов, до ведущими его большой взобравшись, родного большого домах путь семь скатился рукопись путь решила журчит за.</p>
-									<img src="img/portfolio-images/4.jpg" alt="Alt">
-								</div>
-							</div>
-					</div>
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-3"><img src="img/portfolio-images/6.jpg" alt="">	<div class="port_item_cont">
-							<h3>Robot drawing</h3>
-							<p>Made in futurustic style, that design could</p>
-							<a class="popup_content">Fast view</a>
-						</div>
-						<div class="hidden">
-								<div class="port_descr">
-									<h3>Car interior</h3>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Первую продолжил единственное текстов, до ведущими его большой взобравшись, родного большого домах путь семь скатился рукопись путь решила журчит за.</p>
-									<img src="img/portfolio-images/5.jpg" alt="Alt">
-								</div>
-							</div>
-					</div>
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-3"><img src="img/portfolio-images/StockSnap_AWASHBGWIL.jpg" alt="">
-						<div class="port_item_cont">
-							<h3>Gallery</h3>
-							<p>Made in futurustic style, that design could</p>
-							<a class="popup_content">Fast view</a>
-						</div>
-						<div class="hidden">
-								<div class="port_descr">
-									<h3>Car interior</h3>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Первую продолжил единственное текстов, до ведущими его большой взобравшись, родного большого домах путь семь скатился рукопись путь решила журчит за.</p>
-									<img src="img/portfolio-images/StockSnap_AWASHBGWIL.jpg" alt="Alt">
-								</div>
-							</div>
-					</div>
-					<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category-3"><img src="img/portfolio-images/StockSnap_KWS03HELK6.jpg" alt="">
-						<div class="port_item_cont">
-							<h3>Flower</h3>
-							<p>Made in futurustic style, that design could</p>
-							<a class="popup_content">Fast view</a>
-						</div>
-						<div class="hidden">
-								<div class="port_descr">
-									<h3>Car interior</h3>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Первую продолжил единственное текстов, до ведущими его большой взобравшись, родного большого домах путь семь скатился рукопись путь решила журчит за.</p>
-									<img src="img/portfolio-images/StockSnap_KWS03HELK6.jpg" alt="Alt">
-								</div>
-							</div>
-					</div>
+					<? endwhile; endif; wp_reset_query(); ?>
+
 				</div>
 			</div>
 		</div>
@@ -230,9 +153,9 @@
 </section>
 <section id="contacts" class="s_contacts bg_light" >
 	<div class="section_header">
-		<h2>Contact me</h2>
+		<h2><?php echo get_cat_name(11); ?></h2>
 		<div class="s_descr_wrap">
-			<div class="s_descr">Put your message below</div>
+			<div class="s_descr"><?php echo category_description(11); ?></div>
 		</div>
 	</div>
 	<div class="section_content">
@@ -242,17 +165,28 @@
 					<div class="contact_box">
 						<div class="contacts_icon icon-basic-geolocalize-05"></div>
 						<h3>Adress:</h3>
-						<p>Lorem ipsum dolor sit amet</p>
+						<p><?php
+							$options = get_option('sample_theme_options');
+							echo $options['adress']; ?>
+						</p>
 					</div>
 					<div class="contact_box">
 						<div class="contacts_icon icon-basic-webpage-img-txt"></div>
 						<h3>Phone</h3>
-						<p><a href="#">+7 812 232 42 12</a></p>
+						<p><a href="#">
+								<?php
+								$options = get_option('sample_theme_options');
+								echo $options['Phone']; ?>
+							</a></p>
 					</div>
 					<div class="contact_box">
 						<div class="contacts_icon icon-basic-webpage-img-txt"></div>
 						<h3>Web site</h3>
-						<p><a href="#">www.bsizoff.cc</a></p>
+						<p><a href="http://<?php
+							$options = get_option('sample_theme_options');
+							echo $options['website']; ?>" target="_blank"><?php
+								$options = get_option('sample_theme_options');
+								echo $options['website']; ?></a></p>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
